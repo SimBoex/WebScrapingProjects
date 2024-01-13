@@ -18,5 +18,6 @@ print(soup.pretify()) # to see the content, actually, pretify() visualize in a b
 
 soup.find('div') / soup.find_all('div')
 # what's the difference?
-#soup.find() gives the first tag of the page
+#soup.find() gives the first div tag of the page
+#soup.find_all() gives all the div tags of the page
  
