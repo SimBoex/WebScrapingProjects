@@ -19,5 +19,8 @@ print(soup.pretify()) # to see the content, actually, pretify() visualize in a b
 soup.find('div') / soup.find_all('div')
 # what's the difference?
 #soup.find() gives the first div tag of the page
-#soup.find_all() gives all the div tags of the page
- 
+#soup.find_all() gives all the div tags of the page, a list of them
+# how can i specify for one of them? i can use the attributes (eg. class, a, href, id, ...)
+soup.find_all('div', class_ = 'col-md-12')
+# this still returns a list because there are many possile tag with same attributes
+
