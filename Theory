@@ -1,0 +1,17 @@
+Python packages: BeatifulSoup and Requests
+
+from bs4 import BeatifulSoup
+import requests
+
+then get the Url
+url = (...)
+page = requests.get(url) # this the function that get the content and outputs a response object
+
+# if the response is 200 is okay 
+# the other are possible errors: invalid/empty
+
+# think about scraping as taking a snapshot of the html page, cause actually in a page there is dynamic content, but what i download is a snapshot!
+#page.text is the raw html
+soup = BeatifulSoup(page.text,'html') # specifying i want to parse the information in a html format
+# everythin is here!
+print(soup.pretify()) # to see the content, actually, pretify() visualize in a better way the content
