@@ -27,6 +27,6 @@ soup.find_all('div', class_ = 'col-md-12')
 # i can do the same for the p tag obviously
 soup.find_all('p', class_ = 'lead').
 # now let's say i want to extract the text, can i use the attribute .text with .find_all()? no i can't
-# the general idea is: i use find_all() before i need to extract the text, to do so i need to change to .find()
-# obviosly i can use all the string methods on it
+# the general idea is: i use find_all() before i need to extract the text with the method .text(), to do so i need to change to .find()
+# obviosly i can use all the string methods on it after extracting the text
 
