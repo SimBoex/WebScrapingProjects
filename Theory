@@ -15,3 +15,8 @@ page = requests.get(url) # this the function that get the content and outputs a 
 soup = BeatifulSoup(page.text,'html') # specifying i want to parse the information in a html format
 # everythin is here!
 print(soup.pretify()) # to see the content, actually, pretify() visualize in a better way the content
+
+soup.find('div') / soup.find_all('div')
+# what's the difference?
+#soup.find() gives the first tag of the page
+ 
