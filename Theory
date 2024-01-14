@@ -58,7 +58,7 @@ for row in column_data[1:]:
 
 # i have my table!
 
-df.to_csv(path/nameFile.csv)
+df.to_csv(path/nameFile.csv, index = False) # index = false to remove the index
 
 
 
