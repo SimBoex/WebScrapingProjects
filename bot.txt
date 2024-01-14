@@ -37,3 +37,7 @@ if new_link_annunci:
   print('ci sono nuovi annunci')
   for new_link in new_link_annunci:
     webbrowser.open(new_link)
+else:
+  print('nessun nuovo annuncio')
+
+input('\n tutto benneee')
