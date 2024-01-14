@@ -41,17 +41,23 @@ world_titles = table.find_all('th') #using the found table
 #now since i want only the text for each tag i need to iterate
 world_table_titles = [title.text.strip() for title in world_titles]
 
-#can do the same for 'tr' (looking for rows)
+# now i want to create a dataframe
+df = pd.DataFrame(columns = world_table_titles)
+
+
+# and i can do the same for 'tr' (looking for rows)
 column_data = table.find_all('tr)
 # and then iterate looking for the td tag
-for row in column_data:
+for row in column_data[1:]:
   row_data = row.find_all('td')
   individual_row_data = [title.text.strip() for data in row_data]
+  # i can put a row at the time in the new dataframe
+  length = len(df)
+  df.loc[length] = individual_row_data
+  # what's the difference  between loc and iloc?
   
 
 
-# now i want to create a dataframe
-df = pd.DataFrame(columns = world_table_titles)
 
 
 
