@@ -30,3 +30,10 @@ for link_annuncio in link_annunci:
     new_link_annunci.append(link_annuncio)
     f.write('%s\n' % link_annuncio)
 f.close()
+
+
+# adesso se ci sono nuovi li apro
+if new_link_annunci:
+  print('ci sono nuovi annunci')
+  for new_link in new_link_annunci:
+    webbrowser.open(new_link)
