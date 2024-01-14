@@ -30,3 +30,15 @@ soup.find_all('p', class_ = 'lead').
 # the general idea is: i use find_all() before i need to extract the text with the method .text(), to do so i need to change to .find()
 # obviosly i can use all the string methods on it after extracting the text
 
+#let's try a more complex scraping, then get the data and put in a pandas dataframe
+url = '...'
+page = requests.get(url)
+soup = BeatifulSoup(page.text,'html')
+table = soup.find_all('table')[1]
+# in this case as i said i can achieve the same using soup.find() since is the first occurance
+# now i want to get the headers this can be done easily usign the th tag since this is a quite unique tag
+world_titles = soup.find_all('th')
+#now since i want only the text for each tag i need to iterate
+world_table_titles = [title.text for title in world_titles]
+
+
