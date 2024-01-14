@@ -6,5 +6,12 @@ PRE_LINK_ANNUNCIO = () # qui memorizzo the prefisso di un annuncio, lo usero'per
 response = requests.get(LINK)
 response.raise_for_status() # uso il metodo per vedere se non ci sono stati errori nella richiesta http alla pagina
 soup = bs4.BeatifulSoup(response.text, 'html.parser')
-
+# uso il trick per trovare il corrispettivo codice scrollando
 div_annunci = soup.find('div', class = (...))
+#adesso cerco gli indrizzi nel div, sono in tags a
+a_annunci = div_annunci.find_all('a')
+#adesso estrapoli i links
+for a_annuncio in a_annunci:
+  link_annuncio = str(a_annuncio.get('href))
+  # qui uso il prefisso memorizzato per prendere solo i link che mi servono
+  if PRE_LINK_
