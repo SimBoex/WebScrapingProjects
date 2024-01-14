@@ -16,3 +16,8 @@ for a_annuncio in a_annunci:
   # qui uso il prefisso memorizzato per prendere solo i link che mi servono
   if PRE_LINK_ANNUNCIO in link_annuncio:
     link_annunci.append(link_annuncio)
+
+
+
+# okay adesso memorizzo i risultati cosi quando lancerò il programma di nuovo confronterà e aggiungerà i nuovi urls
+f = open('risultati_salvati.txt'.'a')
