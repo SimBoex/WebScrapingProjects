@@ -1,1 +1,10 @@
+import bs4, requests, webbrowser
 
+LINK = () # qui memorizzo il link per la pagine contenente tutti gli annunci
+PRE_LINK_ANNUNCIO = () # qui memorizzo the prefisso di un annuncio, lo usero'per un check
+
+response = requests.get(LINK)
+response.raise_for_status() # uso il metodo per vedere se non ci sono stati errori nella richiesta http alla pagina
+soup = bs4.BeatifulSoup(response.text, 'html.parser')
+
+div_annunci = soup.find('div', class = (...))
