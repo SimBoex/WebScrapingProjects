@@ -14,4 +14,5 @@ a_annunci = div_annunci.find_all('a')
 for a_annuncio in a_annunci:
   link_annuncio = str(a_annuncio.get('href))
   # qui uso il prefisso memorizzato per prendere solo i link che mi servono
-  if PRE_LINK_
+  if PRE_LINK_ANNUNCIO in link_annuncio:
+    link_annunci.append(link_annuncio)
