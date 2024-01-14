@@ -55,7 +55,8 @@ for row in column_data[1:]:
   length = len(df)
   df.loc[length] = individual_row_data
   # what's the difference  between loc and iloc?
-  
+
+# i have my table!
 
 
 
