@@ -21,3 +21,4 @@ for a_annuncio in a_annunci:
 
 # okay adesso memorizzo i risultati cosi quando lancerò il programma di nuovo confronterà e aggiungerà i nuovi urls
 f = open('risultati_salvati.txt'.'a')
+old_link_annunci = [riga.rstrip('\n') for riga in open('risultati_salvati.txt'')]
