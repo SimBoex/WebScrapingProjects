@@ -22,3 +22,11 @@ for a_annuncio in a_annunci:
 # okay adesso memorizzo i risultati cosi quando lancerò il programma di nuovo confronterà e aggiungerà i nuovi urls
 f = open('risultati_salvati.txt'.'a')
 old_link_annunci = [riga.rstrip('\n') for riga in open('risultati_salvati.txt'')]
+
+#adesso faccio il check
+new_link_annunci = []
+for link_annuncio in link_annunci:
+  if link_annuncio not in old_link_annunci:
+    new_link_annunci.append(link_annuncio)
+    f.write('%s\n' % link_annuncio)
+f.close()
