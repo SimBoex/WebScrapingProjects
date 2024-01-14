@@ -37,8 +37,22 @@ soup = BeatifulSoup(page.text,'html')
 table = soup.find_all('table')[1]
 # in this case as i said i can achieve the same using soup.find() since is the first occurance
 # now i want to get the headers this can be done easily usign the th tag since this is a quite unique tag
-world_titles = soup.find_all('th')
+world_titles = table.find_all('th') #using the found table
 #now since i want only the text for each tag i need to iterate
-world_table_titles = [title.text for title in world_titles]
+world_table_titles = [title.text.strip() for title in world_titles]
+
+#can do the same for 'tr' (looking for rows)
+column_data = table.find_all('tr)
+# and then iterate looking for the td tag
+for row in column_data:
+  row_data = row.find_all('td')
+  individual_row_data = [title.text.strip() for data in row_data]
+  
+
+
+# now i want to create a dataframe
+df = pd.DataFrame(columns = world_table_titles)
+
+
 
 
