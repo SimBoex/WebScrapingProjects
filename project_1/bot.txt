@@ -1,19 +1,13 @@
-import bs4, requests, webbrowser
+in this setting the key libraries are the following: (...)
 
-LINK = () # qui memorizzo il link per la pagine contenente tutti gli annunci
-PRE_LINK_ANNUNCIO = () # qui memorizzo the prefisso di un annuncio, lo usero'per un check
-
-response = requests.get(LINK)
-response.raise_for_status() # uso il metodo per vedere se non ci sono stati errori nella richiesta http alla pagina
-
-#here some problems:
-HTTPError: 403 Client Error: Forbidden for url 
-this is often returned when a Cloudflare-protected website recognizes your traffic as automated and denies access to the content.
-
-#how to solve this?
-one approach is to set a Fake User Agent
-
-basically when a non-browser web client (as my bot) has a unique user agent that is quite different from the one a browser web client is using.So i need to manipulate this, in order to hide my bot.
+however there some possible problems:
+  HTTPError: 403 Client Error: Forbidden for url 
+  this is often returned when a Cloudflare-protected website recognizes your traffic as automated and denies access to the content.
+  
+  #how to solve this?
+  one approach is to set a Fake User Agent
+  
+  basically when a non-browser web client (as my bot) has a unique user agent that is quite different from the one a browser web client is using.So i need to manipulate this, in order to hide my bot.
 
 But what is first of all a User Agent?
 it is a string that is sent by the browser to the server, is located in the HTTP header and gives the info about the browser type as well as the operating system used. Why? well the web servers uses to render the content in a way that's compatible with the user's specifications.
@@ -23,44 +17,6 @@ Otherwise i need to optimize request headers.
 
 Now some remarks, there is another element used for detecting bots and this is the amount of requests made by the same client, so we need to rotate the headers if we need a lot of requests
 
-After spending some time on it, i found the solution for my task: i need the cookies!
+here a way to get the headers and the cookies to fake the identity!
 https://stackoverflow.com/a/74187673
-And this solution also shows how to get from my actual request, in order to be the most possible fake!
 
-
-soup = bs4.BeatifulSoup(response.text, 'html.parser')
-# uso il trick per trovare il corrispettivo codice scrollando
-div_annunci = soup.find('div', class = (...))
-#adesso cerco gli indrizzi nel div, sono in tags a
-a_annunci = div_annunci.find_all('a')
-#adesso estrapoli i links
-for a_annuncio in a_annunci:
-  link_annuncio = str(a_annuncio.get('href))
-  # qui uso il prefisso memorizzato per prendere solo i link che mi servono
-  if PRE_LINK_ANNUNCIO in link_annuncio:
-    link_annunci.append(link_annuncio)
-
-
-
-# okay adesso memorizzo i risultati cosi quando lancerò il programma di nuovo confronterà e aggiungerà i nuovi urls
-f = open('risultati_salvati.txt'.'a')
-old_link_annunci = [riga.rstrip('\n') for riga in open('risultati_salvati.txt'')]
-
-#adesso faccio il check
-new_link_annunci = []
-for link_annuncio in link_annunci:
-  if link_annuncio not in old_link_annunci:
-    new_link_annunci.append(link_annuncio)
-    f.write('%s\n' % link_annuncio)
-f.close()
-
-
-# adesso se ci sono nuovi li apro
-if new_link_annunci:
-  print('ci sono nuovi annunci')
-  for new_link in new_link_annunci:
-    webbrowser.open(new_link)
-else:
-  print('nessun nuovo annuncio')
-
-input('\n tutto benneee')
