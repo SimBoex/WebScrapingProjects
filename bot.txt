@@ -18,7 +18,10 @@ basically when a non-browser web client (as my bot) has a unique user agent that
 But what is first of all a User Agent?
 it is a string that is sent by the browser to the server, is located in the HTTP header and gives the info about the browser type as well as the operating system used. Why? well the web servers uses to render the content in a way that's compatible with the user's specifications.
 
-still this is not enough, since there are other headers that are actually send when using a browser. i need to add them 
+still this is not enough in general, since there are other headers that are actually send when using a browser. However in most of the cases it's enough.
+Otherwise i need to optimize request headers.
+
+Now some remarks, there is another element used for detecting bots and this is the amount of requests made by the same client, so we need to rotate the headers if we need a lot of requests
 
 
 soup = bs4.BeatifulSoup(response.text, 'html.parser')
