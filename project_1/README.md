@@ -6,7 +6,7 @@
 - `webbrowser`
 
 ### Common Issue
-- **HTTPError: 403 Client Error: Forbidden for url**: This error often occurs when a Cloudflare-protected website detects automated traffic and denies access.
+- **HTTPError: 403 Client Error: Forbidden for url**: This error often occurs when a Cloudflare-protected website detects automated traffic and denies access (identified using the method response.raise_for_status())
 
 ### Solution: Setting a Fake User Agent
 
