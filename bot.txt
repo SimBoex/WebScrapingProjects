@@ -13,8 +13,11 @@ this is often returned when a Cloudflare-protected website recognizes your traff
 #how to solve this?
 one approach is to set a Fake User Agent
 
-basically when a non-browser web client (as my bot) has a unique user agent that is quite different from the one a browser web client is using.
-so i need to manipulate this, in order to fake.
+basically when a non-browser web client (as my bot) has a unique user agent that is quite different from the one a browser web client is using.So i need to manipulate this, in order to hide my bot.
+
+But what is first of all a User Agent?
+it is a string that is sent by the browser to the server, is located in the HTTP header and gives the info about the browser type as well as the operating system used. Why? well the web servers uses to render the content in a way that's compatible with the user's specifications.
+
 
 
 
