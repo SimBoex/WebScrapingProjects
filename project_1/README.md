@@ -26,8 +26,8 @@
 - **Rate Limiting and Header Rotation**: Websites may track the number of requests from the same client. Rotate headers and, if necessary, IP addresses to avoid detection.
 - **Retrieving Headers and Cookies**: there is a really powerful trick used to get valid headers and cookies in this [answer](https://stackoverflow.com/a/74187673)
 
-![Visualization of a Cluster](https://github.com/SimBoex/WebScrapingProjects/blob/bfd63d6a34601d3c35c6f9af0f6bafeba6fed9a7/project_1/bot.png)
+![StackOverflow Answer](https://github.com/SimBoex/WebScrapingProjects/blob/bfd63d6a34601d3c35c6f9af0f6bafeba6fed9a7/project_1/bot.png)
 
 ### Saved Dataframe
-![Visualization of a Cluster]
+to look at the saved dataframe click [here]
 (https://github.com/SimBoex/WebScrapingProjects/blob/1142acfd17c8ada86db64a3f0df2ba246093b5e5/project_1/rooms.csv)
