@@ -1,4 +1,4 @@
-in this setting the key libraries are the following: (...)
+in this setting the key libraries are the following: bs4, requests, webbrowser
 
 however there some possible problems:
   HTTPError: 403 Client Error: Forbidden for url 
