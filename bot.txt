@@ -25,6 +25,7 @@ Now some remarks, there is another element used for detecting bots and this is t
 
 After spending some time on it, i found the solution for my task: i need the cookies!
 https://stackoverflow.com/a/74187673
+And this solution also shows how to get from my actual request, in order to be the most possible fake!
 
 
 soup = bs4.BeatifulSoup(response.text, 'html.parser')
