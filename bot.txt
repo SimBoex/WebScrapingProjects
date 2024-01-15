@@ -5,6 +5,13 @@ PRE_LINK_ANNUNCIO = () # qui memorizzo the prefisso di un annuncio, lo usero'per
 
 response = requests.get(LINK)
 response.raise_for_status() # uso il metodo per vedere se non ci sono stati errori nella richiesta http alla pagina
+
+#here some problems:
+HTTPError: 403 Client Error: Forbidden for url 
+this is often returned when a Cloudflare-protected website recognizes your traffic as automated and denies access to the content
+
+
+
 soup = bs4.BeatifulSoup(response.text, 'html.parser')
 # uso il trick per trovare il corrispettivo codice scrollando
 div_annunci = soup.find('div', class = (...))
