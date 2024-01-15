@@ -24,4 +24,4 @@
 
 #### Additional Considerations
 - **Rate Limiting and Header Rotation**: Websites may track the number of requests from the same client. Rotate headers and, if necessary, IP addresses to avoid detection.
-- **Retrieving Headers and Cookies**: Use resources like StackOverflow to obtain headers and cookies that can be used to fake a browser's identity. Example: [StackOverflow Reference](https://stackoverflow.com/a/74187673)
+- **Retrieving Headers and Cookies**: there is a really powerful trick used to get valid headers and cookies in this [answer](StackOverflow Reference](https://stackoverflow.com/a/74187673)
