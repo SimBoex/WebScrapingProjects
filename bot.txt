@@ -23,6 +23,9 @@ Otherwise i need to optimize request headers.
 
 Now some remarks, there is another element used for detecting bots and this is the amount of requests made by the same client, so we need to rotate the headers if we need a lot of requests
 
+After spending some time on it, i found the solution for my task: i need the cookies!
+https://stackoverflow.com/a/74187673
+
 
 soup = bs4.BeatifulSoup(response.text, 'html.parser')
 # uso il trick per trovare il corrispettivo codice scrollando
